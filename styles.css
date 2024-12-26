@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #001b3f, #065773, #0a8ba6);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 20%, #001b3f 80%);
+  z-index: 1;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4.5rem;
+  margin: 0;
+  background: linear-gradient(45deg, #fff, #87ceeb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin: 2rem 0;
+  color: #b0e0e6;
+}
+
+.cta {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Content Sections */
+.content-wrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4rem 2rem;
+  margin: 4rem auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+}
+
+.section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #ff6b6b;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section-image {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.section-image:hover {
+  transform: scale(1.02);
+}
+
+/* Snowflakes */
+.snowflake {
+  position: fixed;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes titleGlow {
+  from {
+    text-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(135, 206, 235, 0.8);
+  }
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+  .section h2 {
+    font-size: 2rem;
+  }
+  .section-image {
+    height: 300px;
+  }
+}
+
+.snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.snowflake {
+  position: absolute;
+  top: -2%;
+  font-size: 2rem;
+  color: white;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+.snowflake:nth-child(1) {
+  left: 10%;
+  animation-duration: 10s;
+  animation-delay: 1s;
+}
+.snowflake:nth-child(2) {
+  left: 30%;
+  animation-duration: 12s;
+  animation-delay: 3s;
+}
+.snowflake:nth-child(3) {
+  left: 50%;
+  animation-duration: 8s;
+  animation-delay: 2s;
+}
+.snowflake:nth-child(4) {
+  left: 70%;
+  animation-duration: 11s;
+  animation-delay: 4s;
+}
+.snowflake:nth-child(5) {
+  left: 90%;
+  animation-duration: 9s;
+  animation-delay: 2s;
+}
+.snowflake:nth-child(6) {
+  left: 110%;
+  animation-duration: 9s;
+  animation-delay: 2s;
+}
+.snowflake:nth-child(7) {
+  left: 130%;
+  animation-duration: 9s;
+  animation-delay: 2s;
+}
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #00172e;
+  color: #ffffff;
+  text-align: center;
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.footer p {
+  margin: 0;
+}
